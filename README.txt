@@ -1,6 +1,6 @@
 Breakout for Arduino
 
-Created by:- Udey Rishi & Aaron Plamondon
+Created by: Udey Rishi & Aaron Plamondon
 
 Disclaimer: This game is inspired from Atari's original classic arcade game. Our
 intention is not infringing any copyrights that they might have. This is just a

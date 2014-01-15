@@ -25,7 +25,7 @@ brick_info* environment_draw() {
     static brick_info bpointer[BRICK_NUMBER];
 
     while(brick_ttl) {
-        // The bricks to be printed of each colour.
+        // The bricks to be printed of each colour
         int colour_brick_print[3] = {0, 0, 0}; // Green, Blue, Red, Black respectively
         int brick_1 = 0;
         int brick_2 = 0;

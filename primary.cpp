@@ -12,7 +12,7 @@ extern Adafruit_ST7735 tft; // Contains tft info. Defined in project_head.cpp
 int score; //  Current round's score
 int lives; // Total lives left
 int old_score; // Cumulative score upto previous round
-//Total score = old_score + score
+// Total score = old_score + score
 
 void setup() {
     Serial.begin(9600);

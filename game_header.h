@@ -84,4 +84,5 @@ int16_t h_calibrate_joystick();
 int16_t v_calibrate_joystick();
 int play_game(brick_info* bricks, int16_t hRest, int round);
 void check_pause(int16_t initial, platform_stats *platform, int16_t hRest, int8_t platform_allow);
+
 #endif 

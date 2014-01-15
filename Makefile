@@ -26,7 +26,7 @@ DEFINES := ${DEFINITIONS:%=-D%}
 #CXXFLAGS += -Wall -Werror
 CPPFLAGS += $(DEFINES) 
 
-# override the default optimization levels here
+# Override the default optimization levels here
 # CPP_OPTIMIZE = -O0
 # C_OPTIMIZE = -O0
 # LD_OPTIMIZE = -O0
