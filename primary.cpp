@@ -44,17 +44,17 @@ void setup() {
         }
         
         if (menu_option == 1) { // Load the game
-   	        brick_info* bricks = environment_draw(); // Draws bricks and returns a pointer to array containg their info
-   	        scoreboard(); // Launch the top scoreboard bar / notification bar
-   	        win = play_game(bricks, hRest, round); // Run the game. Returns 0 or 1 if round was lost or won respectively
-	        
-	        if (win == 1) round++;
-	        if (round > 500) win = 0; // End game if 500 rounds are won (I dare the player! ;-) )
-	    }
+               brick_info* bricks = environment_draw(); // Draws bricks and returns a pointer to array containg their info
+               scoreboard(); // Launch the top scoreboard bar / notification bar
+               win = play_game(bricks, hRest, round); // Run the game. Returns 0 or 1 if round was lost or won respectively
+            
+            if (win == 1) round++;
+            if (round > 500) win = 0; // End game if 500 rounds are won (I dare the player! ;-) )
+        }
         
         else if (menu_option == 2) { // Launch the list of high scores
-	        high_scores();
-	    }
+            high_scores();
+        }
     }
 }
 

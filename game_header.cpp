@@ -32,17 +32,17 @@ brick_info* environment_draw() {
 
         // Randomly chooses a number of bricks to be printed on one line.
         if (brick_ttl < 4) {
-	        brick_1 = brick_ttl;
-	    } 
+            brick_1 = brick_ttl;
+        } 
         else {
             brick_1 = random(1,4);
-	    }
+        }
         brick_2 = brick_1;
         // Changes the total number of bricks left.
         brick_ttl = brick_ttl - brick_1;
         // Chooses which bricks are which colour.
         while (brick_1) {
-	    // Randomly chooses a number which corresponds each block.
+        // Randomly chooses a number which corresponds each block.
             int random_num = random(0,255) % 3;
     
             if (colour_brick_ttl[random_num] > 0) {
@@ -50,30 +50,30 @@ brick_info* environment_draw() {
                 colour_brick_ttl[random_num]--;
                 brick_1--;
             }
-	    }
+        }
 
         int position_array[4] = {0, 1, 2, 3};
         int start_2 = 0;
         // Randomly chooses one of four positions to print block;
         while (brick_2) {
-  	    // Random Position in the below array
-	    int end_2 = 4;
+	    // Random Position in the below array
+            int end_2 = 4;
             int random_num = random(start_2, end_2);
 
             // Chooses the position number and swaps it so its not repeated
             int position_num;
             int temp;
 
-	    temp = position_array[start_2];
+            temp = position_array[start_2];
             position_array[start_2] = position_array[random_num];
             position_array[random_num] = temp;
 
             // Increase the starting positon so no overwriting of blocks occurs
             start_2++;
 
-	    // Alocates the brick position for the LCD screen
-	    brick_position_x = (position_array[start_2 - 1])*32;
-	        
+            // Alocates the brick position for the LCD screen
+            brick_position_x = (position_array[start_2 - 1])*32;
+            
             int check = 1;
             while(check) {
                 int random_num_draw = random(0,255) % 3;
@@ -91,7 +91,7 @@ brick_info* environment_draw() {
             } 
         }
         // Shifts to the next row.
-        brick_position_y = brick_position_y + BRICK_BORDER_Y;	
+        brick_position_y = brick_position_y + BRICK_BORDER_Y;    
     }
     return bpointer;
 }
@@ -114,7 +114,7 @@ void brick_draw(brick_info brick) {
     
     /*
     else if (brick.brick_colour == 3) {
-        colour = 0x0000; // Black
+        colour = 0x0000; // Black invincible bricks
         colour_border = 0x0000;
     }*/
     
@@ -141,9 +141,9 @@ void high_scores () {
     while(1) {
         int select = digitalRead(SEL);
         if (select == 0) {
-	        delay(100);
+            delay(100);
             break;
-	    }
+        }
     }
 }
 
@@ -214,15 +214,15 @@ int menu(int16_t vRest) { // Menu Screen
             int select = digitalRead(SEL); 
             int16_t v = analogRead(VERT);
             if (v > vPlus) {
-	        menu_option = 2;
+                menu_option = 2;
                 tft.fillRect(29, 75, 65, 13, ST7735_CYAN);
-		menu_option1();
-	        }
+                menu_option1();
+            }
             if (select == 0) {
                 delay(100);
-		return menu_option;
-	        }
-	    }
+                return menu_option;
+            }
+        }
         tft.fillRect(27, 92, 71, 13, ST7735_BLACK);
         menu_option2();
         playTone(5000, 50);
@@ -230,14 +230,14 @@ int menu(int16_t vRest) { // Menu Screen
             int select = digitalRead(SEL); 
             int16_t v = analogRead(VERT);
             if (v < vMinus) {
-	        menu_option = 1;
+                menu_option = 1;
                 tft.fillRect(27, 92, 71, 13, ST7735_CYAN);
-		menu_option2();
-	        }
-	        if (select == 0) {
+                menu_option2();
+            }
+            if (select == 0) {
                 delay(100);
-	        return menu_option;
-	        }
+                return menu_option;
+            }
         }   
         playTone(5000, 50);
     }
